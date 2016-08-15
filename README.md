@@ -12,7 +12,7 @@ go get github.com/legion-zver/utils
 
 # UnixTime
 
-Support in ORM such as GORM and marshaller to JSON to int64
+Support in ORM such as GORM (use int(11) by time) and marshaller to JSON to int64
 
 ## Example JSON
 
@@ -41,3 +41,12 @@ Result:
 ```
 {"created":1471270764}
 ```
+
+### Benchmark Marshal JSON
+
+On MacBook Pro 15 (i7, 8Gb):
+```
+Use unixtime.Time by 1000000 items:	 498.90682ms
+Use time.Time by 1000000 items:		 1.556858113s
+```
+Using unixtime.Time increase marshal speed 3x
