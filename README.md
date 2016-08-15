@@ -9,3 +9,11 @@ My Utils for GoLang
 ```
 go get github.com/legion-zver/utils
 ```
+
+# UnixTime
+
+```go
+import (
+    "github.com/legion-zver/utils/unixtime"
+)
+```
