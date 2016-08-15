@@ -18,6 +18,11 @@ func (t UnixTime) String() string {
     return strconv.FormatInt(int64(t), 10)
 }
 
+// Format (UnixTime) - UnixTime to String By Format
+func (t UnixTime) Format(layout string) string {
+    return t.Time().UTC().Format(layout)
+}
+
 // AddDate (UnixTime) - Add Date
 func (t UnixTime) AddDate(years, months, days int) UnixTime {
     return UnixTime(t.Time().AddDate(years, months, days).Unix())
